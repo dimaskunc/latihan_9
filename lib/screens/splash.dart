@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             SizedBox(height: 20.0),
             Text(
-              'Rumah Kost Berkah Mandiri',
+              'Kost Berkah Mandiri',
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
