@@ -4,9 +4,13 @@ import 'dashboard.dart';
 class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    bool agreeTerms = false;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Register'),
+        title: Text('Register', style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.blueAccent,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -34,7 +38,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 10.0),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 decoration: BoxDecoration(
@@ -49,7 +53,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 10.0),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 decoration: BoxDecoration(
@@ -64,7 +68,7 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 10.0),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 decoration: BoxDecoration(
@@ -79,10 +83,32 @@ class RegisterPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 2.0),
+              Row(
+                children: [
+                  Checkbox(
+                    value: true,
+                    onChanged: (value) {
+                      // Implementasi logika persetujuan Terms & Conditions
+                      agreeTerms = value!;
+                    },
+                    checkColor: Colors.white, // Warna centang putih
+                    activeColor: Colors.white, // Warna latar checkbox putih
+                    hoverColor: Colors.white, // Warna garis checkbox saat dihover putih
+                  ),
+                  Text(
+                    'I Agree with Terms & Conditions',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12.0,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 5.0),
               ElevatedButton(
                 onPressed: () {
-                  // Implementasi logika registrasi bisa ditambahkan di sini
+                  // Implementasi logika autentikasi bisa ditambahkan di sini
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => DashboardPage()),

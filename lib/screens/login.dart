@@ -7,7 +7,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Login', style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.blueAccent,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -35,7 +36,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 13.0),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 decoration: BoxDecoration(
@@ -50,12 +51,50 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20.0),
+              SizedBox(height: 2.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: true, // Ganti dengan nilai sesuai kebutuhan
+                        onChanged: (value) {
+                          // Implementasi Remember Password
+                        },
+                        checkColor: Colors.white, // Warna centang putih
+                        activeColor: Colors.white, // Warna latar checkbox putih
+                        hoverColor: Colors.white, // Warna garis checkbox saat dihover putih
+                      ),
+                      Text(
+                        'Remember Me',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Implementasi Forgot Password
+                    },
+                    child: Text(
+                      'Forgot Password ?',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12.0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 3.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Create an Account?',
+                    'Create an Account ?',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16.0,
@@ -70,7 +109,7 @@ class LoginPage extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      'Create Account',
+                      'Register',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16.0,
@@ -80,7 +119,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 15.0),
+              SizedBox(height: 10.0),
               ElevatedButton(
                 onPressed: () {
                   // Implementasi logika autentikasi bisa ditambahkan di sini
@@ -104,15 +143,15 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {
                   // Implementasi login with Google
                 },
-                icon: Icon(Icons.ac_unit), // Ganti dengan Icons.ac_unit
+                icon: Image.asset('assets/google.png', width: 24.0, height: 24.0),
                 label: Text('Login with Google'),
               ),
-              SizedBox(height: 10.0),
+              SizedBox(height: 5.0),
               ElevatedButton.icon(
                 onPressed: () {
                   // Implementasi login with Facebook
                 },
-                icon: Icon(Icons.facebook),
+                icon: Image.asset('assets/facebook.png', width: 24.0, height: 24.0),
                 label: Text('Login with Facebook'),
               ),
             ],
